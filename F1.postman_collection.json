@@ -1,0 +1,122 @@
+{
+	"info": {
+		"_postman_id": "040e2084-1e3e-4ba7-b926-80385b2a73ac",
+		"name": "F1",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Init",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/init",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"init"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Results-Turkey",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2020-11-15T20:00:00Z\",\r\n    \"country\": \"Turkey\",\r\n    \"drivers\": [\"L. Hamilton\", \"V. Bottas\", \"M. Verstappen\", \"S. Perez\", \"C. Leclerc\", \"D. Riccardo\"],\r\n    \"constructors\": [\"Mercedes\", \"Mercedes\", \"Red Bull\", \"Racing Point\", \"Ferrari\", \"Renault\"]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"results"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Results-Singapore",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"date\": \"2020-10-06T12:30:00Z\",\r\n    \"country\": \"Singapore\",\r\n    \"drivers\": [\"L. Hamilton\", \"M. Verstappen\", \"C. Leclerc\", \"S. Perez\", \"D. Riccardo\", \"V. Bottas\"],\r\n    \"constructors\": [\"Mercedes\", \"Red Bull\", \"Ferrari\", \"Racing Point\", \"Renault\", \"Mercedes\"]\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/results",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"results"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crash-Turkey",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"crash\": {\r\n        \"country\": \"Turkey\",\r\n        \"details\": {\r\n            \"turn\": 4,\r\n            \"time_elapsed\": \"1:15\",\r\n            \"driver\": \"R. Grosjean\",\r\n            \"team\": \"HaaS\"\r\n        }\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8081/crashes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"crashes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

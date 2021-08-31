@@ -1,0 +1,17 @@
+{
+  "name": "f1-mdb-demo",
+  "version": "1.0.0",
+  "description": "A simple demo based on nodejs + express showing the flexible schema and transactions capability of MongoDB",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongodb": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Derrick Chua",
+  "license": "ISC"
+}
