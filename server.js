@@ -88,6 +88,33 @@ MongoClient.connect(url, { useUnifiedTopology: true })
 
         res.json({Status: hasError ? "Failed" : "Success"});
     })
+    
+    app.get('/top_drivers', (req, res) => {
+        console.log("Top Drivers Request");
+        var aggPipeline = [
+            {
+              '$project': {
+                '_id': 0, 
+                'top3': {
+                  '$firstN': {
+                    'n': 3, 
+                    'input': '$drivers'
+                  }
+                }
+              }
+            }, {
+              '$unwind': {
+                'path': '$top3'
+              }
+            }, {
+              '$sortByCount': '$top3'
+            }
+          ]
+
+        resultsCollection.aggregate(aggPipeline).toArray()
+        .then(result=>{return res.json(result)})
+        .catch(error=>{return res.json("Top Drivers error:\n"+error);})
+    })
 })
 .catch(error => {
     console.log("Error connecting to Atlas cluster")
